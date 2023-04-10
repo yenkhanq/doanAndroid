@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:background="@drawable/bg3"
+    android:padding="10dp"
+    tools:context=".Maingiangvien">
+    <TextView
+        android:gravity="center"
+        android:textSize="35sp"
+        android:text="GIẢNG VIÊN"
+        android:textStyle="bold|normal"
+        android:textColor="@color/white"
+        />
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Mã GV:"/>
+        <EditText
+
+            android:id="@+id/edtMaGv"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="mã giảng viên"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Tên GV:"/>
+        <EditText
+            android:id="@+id/edtTENGV"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="tên giảng viên"/>
+    </TableRow>
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnThemGV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm GV"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btnSuaGV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sửa GV"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btnXoaGV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xóa GV"
+            android:textSize="15sp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lvGV"/>
+    </LinearLayout>
+
+</TableLayout>

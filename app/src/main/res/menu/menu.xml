@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mnGiangvien"
+        android:title="Giảng viên"/>
+    <item android:id="@+id/mnKhoa"
+        android:title="Khóa"/>
+    <item android:id="@+id/mnLop"
+        android:title="Lớp"/>
+    <item android:id="@+id/mnMon"
+        android:title="Môn"/>
+
+    <item android:id="@+id/mnSinhvien"
+        android:title="Sinh viên"/>
+    <item android:id="@+id/mnDiem"
+        android:title="Điểm"/>
+
+</menu>

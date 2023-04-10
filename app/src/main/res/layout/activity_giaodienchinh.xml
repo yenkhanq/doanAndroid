@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Giaodienchinh"
+    android:background="@drawable/bg3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/iconcmcc"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/CreateDTB"
+            android:background="#0000"
+            android:text="CREATE DATABASSE"
+            android:textSize="16dp"
+                >
+        </Button>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DeleteDTB"
+            android:background="#0000"
+            android:text="DELETE DATABASSE"
+            android:textSize="16dp"
+            >
+        </Button>
+
+
+        <Button
+            android:id="@+id/btngiangvien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:text="CREATE TB Giảng viên"
+            android:textSize="16dp" />
+        <Button
+            android:id="@+id/btnKhoa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:textSize="16dp"
+            android:text="CREATE TB Khóa"/>
+
+        <Button
+            android:id="@+id/btnlop"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:text="CREATE TB Lớp"
+            android:textSize="16dp" />
+        <Button
+            android:id="@+id/btnmon"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:text="CREATE TB Môn"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/btnsinhvien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:text="CREATE TB Sinh viên"
+            android:textSize="16dp" />
+        <Button
+            android:id="@+id/btndiem"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:text="CREATE TB Điểm"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

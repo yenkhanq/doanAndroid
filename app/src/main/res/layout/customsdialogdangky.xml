@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Maindangky"
+
+    android:background="@drawable/bg3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:text="Đăng Ký Tài Khoản"
+            android:textSize="30dp"
+            android:gravity="center"/>
+
+        <ImageView
+            android:layout_width="124dp"
+            android:layout_height="119dp"
+            android:layout_marginBottom="40dp"
+            android:src="@drawable/dangkyy" />
+
+        <EditText
+            android:id="@+id/dktaikhoan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:ems="15"
+            android:hint="Tên Đăng Nhập"
+            android:textSize="20dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/dkmatkhau"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:ems="15"
+            android:hint="Mật Khẩu"
+            android:inputType="textPassword"
+            android:textSize="20dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/dangkytaikhoan"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+
+            android:textSize="16dp"
+
+            android:text="Đăng ký"/>
+
+        <Button
+            android:id="@+id/thoatdangky"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Thoát"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

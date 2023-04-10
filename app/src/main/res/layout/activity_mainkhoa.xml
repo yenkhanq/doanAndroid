@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:background="@drawable/bg3"
+    android:padding="10dp"
+    tools:context=".Mainkhoa">
+    <TextView
+        android:gravity="center"
+        android:textSize="35sp"
+        android:text="KHÓA HỌC"
+        android:textStyle="bold|normal"
+        android:textColor="@color/white"
+        />
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Mã Khóa:"/>
+        <EditText
+
+            android:id="@+id/edtMaKhoa"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="mã khóa"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Tên Khóa:"/>
+        <EditText
+            android:id="@+id/edtTenKhoa"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="tên khóa"/>
+    </TableRow>
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnthemKhoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm Khóa"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btnSuaKhoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sửa khóa"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btnXoaKhoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xóa khóa"
+            android:textSize="15sp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lvKhoa"/>
+    </LinearLayout>
+
+</TableLayout>
