@@ -206,12 +206,15 @@ public class Giaodienchinh extends AppCompatActivity {
             case R.id.mnLop:
                 Intent intentlop=new Intent(Giaodienchinh.this,Mainlop.class);
                 startActivity(intentlop);
+                break;
             case R.id.mnMon:
                 Intent intentmon=new Intent(Giaodienchinh.this,Mainmon.class);
                 startActivity(intentmon);
+                break;
             case R.id.mnSinhvien:
                 Intent intensinhvien=new Intent(Giaodienchinh.this,Mainsinhvien.class);
                 startActivity(intensinhvien);
+                break;
             case R.id.mnDiem:
                 Intent intentdiem=new Intent(Giaodienchinh.this,Maindiem.class);
                 startActivity(intentdiem);
