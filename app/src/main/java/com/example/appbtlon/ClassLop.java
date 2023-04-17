@@ -1,16 +1,16 @@
 package com.example.appbtlon;
 
 public class ClassLop {
-    String maKhoa;
+
     String maLop;
     String tenLop;
 
-    public ClassLop(String maLop, String tenLop, String maKhoa)
+    public ClassLop(String maLop, String tenLop)
     {
 
         this.maLop=maLop;
         this.tenLop=tenLop;
-        this.maKhoa=maKhoa;
+
     }
 
     public  String toString()
@@ -19,7 +19,7 @@ public class ClassLop {
 
         msg+="Mã Lớp : " + this.maLop + "\n";
         msg+="Tên Lớp : " + this.tenLop +"\n";
-        msg+="Mã Khóa : " + this.maKhoa + "\n";
+
 
         return msg;
     }

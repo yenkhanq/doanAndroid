@@ -79,7 +79,7 @@ public class Giaodienchinh extends AppCompatActivity {
         btnlop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String sql = "CREATE TABLE TBLOP (MALOP TEXT PRIMARY KEY,TENLOP TEXT,MAKHOA TEXT,FOREIGN KEY (MAKHOA) REFERENCES TBKHOA(MAKHOA));";
+                String sql = "CREATE TABLE TBLOP (MALOP TEXT PRIMARY KEY,TENLOP TEXT);";
                 if(doAction(sql)==true){
                     Toast.makeText(Giaodienchinh.this,"Tạo Table [TBLOP] thành công",Toast.LENGTH_SHORT).show();
                 }
@@ -105,7 +105,7 @@ public class Giaodienchinh extends AppCompatActivity {
         btnsinhvien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String sql = "CREATE TABLE TBSINHVIEN (MASV TEXT PRIMARY KEY,TENSV TEXT,GIOITINH TEXT,MALOP TEXT,FOREIGN KEY (MALOP) REFERENCES TBLOP(MALOP));";
+                String sql = "CREATE TABLE TBSINHVIEN (MASV TEXT PRIMARY KEY,TENSV TEXT,GIOITINH TEXT,MALOP TEXT,MAKHOA TEXT,FOREIGN KEY (MALOP) REFERENCES TBLOP(MALOP),FOREIGN KEY (MAKHOA) REFERENCES TBKHOA(MAKHOA));";
                 if(doAction(sql)==true){
                     Toast.makeText(Giaodienchinh.this,"Tạo Table [TBSINHVIEN] thành công",Toast.LENGTH_SHORT).show();
                 }

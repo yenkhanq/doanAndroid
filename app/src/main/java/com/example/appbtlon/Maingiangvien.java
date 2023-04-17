@@ -61,7 +61,7 @@ public class Maingiangvien extends AppCompatActivity {
                 tenGV = edtTENGV.getText().toString();
                 String sql = "UPDATE TBGIANGVIEN SET TENGV = '"+maGV+"' WHERE MAGV = '"+tenGV+"'";
                 if(doAction(sql)==true){
-                    Toast.makeText(Maingiangvien.this,"Sửa [TBGIANGVIEN thành công",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Maingiangvien.this,"Sửa [TBGIANGVIEN] thành công",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(Maingiangvien.this,"Sửa [TBGIANGVIEN] [KHÔNG] thành công",Toast.LENGTH_SHORT).show();

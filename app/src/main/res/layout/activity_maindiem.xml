@@ -1,9 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Maindiem">
+    android:stretchColumns="*"
+    android:background="@drawable/bg3"
+    android:padding="10dp"
+    tools:context=".Mainsinhvien">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:gravity="center"
+        android:textSize="35sp"
+        android:text="Điểm Sinh viên"
+        android:textStyle="bold|normal"
+        android:textColor="@color/white"
+        />
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Điểm:"/>
+        <EditText
+
+            android:id="@+id/edtDiem"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="nhập Điểm"/>
+    </TableRow>
+
+
+    <LinearLayout
+        android:padding="15sp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableRow
+            android:padding="15sp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_span="1"
+                android:gravity="left"
+                android:text="Chọn Mã sinh viên:"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold|normal" />
+
+            <Spinner
+                android:id="@+id/snpMaSinhvien"
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="Null"
+                android:minHeight="48dp"
+                android:textSize="25sp" />
+        </TableRow>
+        <TableRow
+            android:padding="15sp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_span="1"
+                android:gravity="left"
+                android:text="Chọn Mã Môn:"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold|normal" />
+
+            <Spinner
+                android:id="@+id/spnmaMon"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="Null"
+                android:minHeight="48dp"
+                android:textSize="25sp" />
+        </TableRow>
+        <TableRow
+            android:padding="15sp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_span="1"
+                android:gravity="left"
+                android:text="Chọn Mã Khóa:"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold|normal" />
+
+            <Spinner
+                android:id="@+id/spnmaKhoa"
+                android:layout_width="208dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="Null"
+                android:minHeight="48dp"
+                android:textSize="25sp" />
+        </TableRow>
+        <TableRow
+            android:padding="15sp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:layout_span="1"
+                android:gravity="left"
+                android:text="Chọn Mã Lớp:"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold|normal" />
+
+            <Spinner
+                android:id="@+id/spnMaLop"
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="Null"
+                android:minHeight="48dp"
+                android:textSize="25sp" />
+        </TableRow>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="392dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <Button
+                android:id="@+id/btnthemDiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:text="Thêm Điểm"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnSuaDiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:text="Sửa Điểm"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btnXoaDiem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="1"
+                android:text="Xóa Điểm"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <ListView
+            android:id="@+id/lvDiem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</TableLayout>

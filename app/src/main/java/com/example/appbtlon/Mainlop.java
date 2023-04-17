@@ -19,12 +19,12 @@ import java.util.ArrayList;
 public class Mainlop extends AppCompatActivity {
     String nameDB = "QLdiem.db"; //Khai báo tên Database
     SQLiteDatabase database;
-    ArrayList listLop,listKhoa;
+    ArrayList listLop;
     ListView lvLop;
-    String maLop,tenLop,maKhoa;
+    String maLop,tenLop;
     Button btnThemlop,btnSuaLop,btnXoaLop;
     EditText edtMalop,edtTenlop;
-    Spinner spnerMaKhoa;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class Mainlop extends AppCompatActivity {
         edtTenlop=(EditText) findViewById(R.id.edtTenlop);
 
 
-        spnerMaKhoa=(Spinner) findViewById(R.id.spnerMaKhoa);
+
 
         lvLop=(ListView) findViewById(R.id.lvLop);
 
@@ -43,31 +43,20 @@ public class Mainlop extends AppCompatActivity {
         btnSuaLop=(Button) findViewById(R.id.btnsuaLop);
         btnXoaLop=(Button) findViewById(R.id.btnXoaLop);
 
-        hienThiSpinnerMAKHOA();
+
         hienThiLop();
 
         lvLop.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                ClassLop noiDung = (ClassLop) listLop.get(i);
-                edtMalop.setText(noiDung.maLop);
-                edtTenlop.setText(noiDung.tenLop);
+                ClassLop lop = (ClassLop) listLop.get(i);
+                edtMalop.setText(lop.maLop);
+                edtTenlop.setText(lop.tenLop);
 
                 return false;
             }
         });
-        spnerMaKhoa.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                classKhoa makhoa = (classKhoa) listKhoa.get(i);
-                maKhoa=makhoa.maKhoa;
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-                Toast.makeText(Mainlop.this, "Hãy chọn Khóa", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         btnThemlop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,7 +65,7 @@ public class Mainlop extends AppCompatActivity {
                 tenLop = edtTenlop.getText().toString();
 
 
-                String sql = "INSERT INTO TBLOP VALUES('"+maLop+"','"+tenLop+"','"+maKhoa+"')";
+                String sql = "INSERT INTO TBLOP VALUES('"+maLop+"','"+tenLop+"')";
                 if(doAction(sql)==true){
                     Toast.makeText(Mainlop.this,"Thêm [TBLOP] thành công",Toast.LENGTH_SHORT).show();
                 }
@@ -94,7 +83,7 @@ public class Mainlop extends AppCompatActivity {
                 maLop = edtMalop.getText().toString();
                 tenLop = edtTenlop.getText().toString();
 
-                String sql = "UPDATE TBLOP SET MALOP = '"+maLop+"',TENLOP = '"+tenLop+"',MAKHOA = '"+maKhoa+"' WHERE MALOP = '"+maLop+"'";
+                String sql = "UPDATE TBLOP SET MALOP = '"+maLop+"',TENLOP = '"+tenLop+"' WHERE MALOP = '"+maLop+"'";
                 if(doAction(sql)==true){
                     Toast.makeText(Mainlop.this,"Sửa [TBLOP] thành công",Toast.LENGTH_SHORT).show();
                 }
@@ -158,28 +147,12 @@ public class Mainlop extends AppCompatActivity {
         Cursor cursor = database.rawQuery(sql,null);
         if(cursor.moveToFirst()){
             do {
-                listLop.add(new ClassLop(cursor.getString(0),cursor.getString(1),cursor.getString(2)));
+                listLop.add(new ClassLop(cursor.getString(0),cursor.getString(1)));
             }while (cursor.moveToNext());
         }
         database.close();
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1,listLop);
         lvLop.setAdapter(adapter);
     }
-   public void hienThiSpinnerMAKHOA(){
 
-        listKhoa=new ArrayList();
-
-        String sql="Select * From TBKHOA Order By MAKHOA";
-        database=openOrCreateDatabase(nameDB,MODE_PRIVATE,null);
-        Cursor cursor=database.rawQuery(sql,null);
-        if(cursor.moveToFirst()){
-            do{
-                listKhoa.add(new classKhoa(cursor.getString(0),cursor.getString(1)));
-            }while (cursor.moveToNext());
-        }
-        database.close();
-        ArrayAdapter adapter=new ArrayAdapter(this, android.R.layout.simple_spinner_item,listKhoa);
-        adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-        spnerMaKhoa.setAdapter(adapter);
-    }
 }

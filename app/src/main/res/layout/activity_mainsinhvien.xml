@@ -63,7 +63,7 @@
             android:textStyle="bold|normal"
             android:textColor="@color/white"
             android:gravity="right"
-            android:textSize="25sp"
+            android:textSize="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Chọn Lớp:"
@@ -73,6 +73,30 @@
             android:layout_span="3"
             android:textSize="25sp"
             android:id="@+id/spnerMaLop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Null"
+            android:minHeight="48dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:gravity="right"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chọn Khóa:"
+            />
+
+        <Spinner
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:id="@+id/spnerMaKhoa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="Null"
