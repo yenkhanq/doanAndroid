@@ -105,7 +105,7 @@ public class Giaodienchinh extends AppCompatActivity {
         btnsinhvien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String sql = "CREATE TABLE TBSINHVIEN (MASV TEXT PRIMARY KEY,TENSV TEXT,GIOITINH TEXT,MALOP TEXT,MAMON TEXT,FOREIGN KEY (MALOP) REFERENCES TBLOP(MALOP),FOREIGN KEY (MAMON) REFERENCES TBMON(MAMON));";
+                String sql = "CREATE TABLE TBSINHVIEN (MASV TEXT PRIMARY KEY,TENSV TEXT,GIOITINH TEXT,MALOP TEXT,FOREIGN KEY (MALOP) REFERENCES TBLOP(MALOP));";
                 if(doAction(sql)==true){
                     Toast.makeText(Giaodienchinh.this,"Tạo Table [TBSINHVIEN] thành công",Toast.LENGTH_SHORT).show();
                 }
@@ -120,6 +120,7 @@ public class Giaodienchinh extends AppCompatActivity {
                 String sql = "CREATE TABLE TBDIEM (DIEM TEXT PRIMARY KEY,MASV TEXT,MAMON TEXT,MAKHOA TEXT,MALOP TEXT," +
                         "FOREIGN KEY (MASV) REFERENCES TBSINHVIEN(MASV)," +
                         "FOREIGN KEY (MAMON) REFERENCES TBMON(MAMON)," +
+                        "FOREIGN KEY (MAKHOA) REFERENCES TBKHOA(MAKHOA),"+
                         "FOREIGN KEY (MALOP) REFERENCES TBLOP(MALOP));";
                 if(doAction(sql)==true){
                     Toast.makeText(Giaodienchinh.this,"Tạo Table [TBDIEM] thành công",Toast.LENGTH_SHORT).show();

@@ -1,9 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:background="@drawable/bg3"
+    android:padding="10dp"
     tools:context=".Mainsinhvien">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:gravity="center"
+        android:textSize="35sp"
+        android:text="Sinh Viên"
+        android:textStyle="bold|normal"
+        android:textColor="@color/white"
+        />
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Mã Sinh viên:"/>
+        <EditText
+
+            android:id="@+id/edtmasv"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="mã sinh viên"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Tên Sinh viên: "/>
+        <EditText
+            android:id="@+id/edttensv"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="tên sinh viên"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:text="Giới tính: "/>
+        <EditText
+            android:id="@+id/edtgioiTinh"
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:hint="nhập giới tính"/>
+    </TableRow>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold|normal"
+            android:textColor="@color/white"
+            android:gravity="right"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chọn Lớp:"
+            />
+
+        <Spinner
+            android:layout_span="3"
+            android:textSize="25sp"
+            android:id="@+id/spnerMaLop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Null"
+            android:minHeight="48dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnthemSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm sinh viên"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btnSuaSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sửa sinh viên"
+            android:textSize="15sp" />
+        <Button
+            android:id="@+id/btnXoaSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xóa sinh Viên"
+            android:textSize="15sp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lvSv"/>
+    </LinearLayout>
+
+</TableLayout>

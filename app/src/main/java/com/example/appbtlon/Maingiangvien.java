@@ -137,4 +137,5 @@ public class Maingiangvien extends AppCompatActivity {
         edtTENGV.setText("");
         edtMaGv.findFocus();
     }
+
 }
