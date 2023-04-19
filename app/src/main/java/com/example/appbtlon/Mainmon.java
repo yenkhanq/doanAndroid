@@ -2,9 +2,13 @@ package com.example.appbtlon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -107,7 +111,10 @@ public class Mainmon extends AppCompatActivity {
                 maMon = edtMamon.getText().toString();
                 tenMon = edtTenmon.getText().toString();
 
-                String sql = "UPDATE TBMON SET MAMON = '"+maMon+"',TENMON = '"+tenMon+"',MAKHOA = '"+maKhoa+"',MAGV = '"+maGV+"' WHERE MAMON = '"+maMon+"'";
+
+                String sql="Update TBMON ";
+                sql+="Set MAMON='"+maMon+"',TENMON='"+tenMon+"',MAKHOA = '"+maKhoa+"',MAGV = '"+maGV+"'";
+                sql+=" Where MAMON='"+maMon+"'";
                 if(doAction(sql)==true){
                     Toast.makeText(Mainmon.this,"Sửa [TBMON] thành công",Toast.LENGTH_SHORT).show();
                 }
@@ -210,5 +217,50 @@ public class Mainmon extends AppCompatActivity {
         ArrayAdapter adapter=new ArrayAdapter(this, android.R.layout.simple_spinner_item,listGV);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spnMaGV.setAdapter(adapter);
+    }
+    //menu
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater= getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id=item.getItemId();
+        switch (id)
+        {
+            case R.id.mnCHINH:
+                Intent inchinh=new Intent(Mainmon.this,Giaodienchinh.class);
+                startActivity(inchinh);
+                break;
+            case R.id.mnGiangvien:
+                Intent intengiangvien=new Intent(Mainmon.this,Maingiangvien.class);
+                startActivity(intengiangvien);
+                break;
+            case R.id.mnKhoa:
+                Intent intentkhoa=new Intent(Mainmon.this,Mainkhoa.class);
+                startActivity(intentkhoa);
+                break;
+            case R.id.mnLop:
+                Intent intentlop=new Intent(Mainmon.this,Mainlop.class);
+                startActivity(intentlop);
+                break;
+            case R.id.mnMon:
+                Intent intentmon=new Intent(Mainmon.this,Mainmon.class);
+                startActivity(intentmon);
+                break;
+            case R.id.mnSinhvien:
+                Intent intensinhvien=new Intent(Mainmon.this,Mainsinhvien.class);
+                startActivity(intensinhvien);
+                break;
+            case R.id.mnDiem:
+                Intent intentdiem=new Intent(Mainmon.this,Maindiem.class);
+                startActivity(intentdiem);
+                break;
+
+            default:
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

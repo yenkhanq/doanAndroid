@@ -2,9 +2,13 @@ package com.example.appbtlon;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -112,10 +116,6 @@ public class Maindiem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Diem = edtDiem.getText().toString();
-
-
-
-
                 String sql = "INSERT INTO TBDIEM VALUES('"+Diem+"','"+maSv+"','"+maMon+"','"+maKhoa+"','"+maLop+"')";
                 if(doAction(sql)==true){
                     Toast.makeText(Maindiem.this,"Thêm [TBDIEM] thành công",Toast.LENGTH_SHORT).show();
@@ -133,7 +133,10 @@ public class Maindiem extends AppCompatActivity {
             public void onClick(View view) {
                 Diem = edtDiem.getText().toString();
 
-                String sql = "UPDATE TBDIEM SET DIEM = '"+Diem+"',MASV = '"+maSv+"',MAMON = '"+maMon+"',MAKHOA='"+maKhoa+"',MALOP='"+maLop+"' WHERE DIEM = '"+Diem+"'";
+                String sql="Update TBDIEM ";
+                sql+="Set DIEM='"+Diem+"',MASV = '"+maSv+"',MAMON = '"+maMon+"',MAKHOA='"+maKhoa+"',MALOP='"+maLop+"'";
+                sql+=" Where MASV='"+maSv+"'";
+
                 if(doAction(sql)==true){
                     Toast.makeText(Maindiem.this,"Sửa [TBDIEM] thành công",Toast.LENGTH_SHORT).show();
                 }
@@ -271,5 +274,50 @@ public class Maindiem extends AppCompatActivity {
         ArrayAdapter adapter=new ArrayAdapter(this, android.R.layout.simple_spinner_item,ListLop);
         adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         spnLop.setAdapter(adapter);
+    }
+    //menu
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater= getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        int id=item.getItemId();
+        switch (id)
+        {
+            case R.id.mnCHINH:
+                Intent inchinh=new Intent(Maindiem.this,Giaodienchinh.class);
+                startActivity(inchinh);
+                break;
+            case R.id.mnGiangvien:
+                Intent intengiangvien=new Intent(Maindiem.this,Maingiangvien.class);
+                startActivity(intengiangvien);
+                break;
+            case R.id.mnKhoa:
+                Intent intentkhoa=new Intent(Maindiem.this,Mainkhoa.class);
+                startActivity(intentkhoa);
+                break;
+            case R.id.mnLop:
+                Intent intentlop=new Intent(Maindiem.this,Mainlop.class);
+                startActivity(intentlop);
+                break;
+            case R.id.mnMon:
+                Intent intentmon=new Intent(Maindiem.this,Mainmon.class);
+                startActivity(intentmon);
+                break;
+            case R.id.mnSinhvien:
+                Intent intensinhvien=new Intent(Maindiem.this,Mainsinhvien.class);
+                startActivity(intensinhvien);
+                break;
+            case R.id.mnDiem:
+                Intent intentdiem=new Intent(Maindiem.this,Maindiem.class);
+                startActivity(intentdiem);
+                break;
+
+            default:
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
