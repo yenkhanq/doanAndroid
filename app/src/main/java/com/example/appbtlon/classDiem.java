@@ -7,7 +7,7 @@ public class classDiem {
     String maMon;
     String maKhoa;
     String maLop;
-
+//
     public classDiem(String Diem, String maSV,String maMon,String maKhoa, String maLop)
     {
 
